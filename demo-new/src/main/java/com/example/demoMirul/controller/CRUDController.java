@@ -1,4 +1,4 @@
-package com.example.demo_new.controller;
+package com.example.demoMirul.controller;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -54,8 +54,6 @@ public class CRUDController {
 		return new ResponseEntity<>("Item created successfully with ID: " + newId + " and data: " + newItemName,
 				HttpStatus.CREATED); // 201 Created
 	}
-
-	// --- CREATE (HTTP POST) ---
 
 	// --- READ (HTTP GET) ---
 	@GetMapping

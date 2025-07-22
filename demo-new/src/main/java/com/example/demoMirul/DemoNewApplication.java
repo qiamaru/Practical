@@ -1,4 +1,4 @@
-package com.example.demo_new;
+package com.example.demoMirul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

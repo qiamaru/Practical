@@ -1,4 +1,4 @@
-package com.example.demo_new.util.config;
+package com.example.demoMirul.util.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

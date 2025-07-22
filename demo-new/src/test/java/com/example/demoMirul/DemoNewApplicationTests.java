@@ -1,4 +1,4 @@
-package com.example.demo_new;
+package com.example.demoMirul;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

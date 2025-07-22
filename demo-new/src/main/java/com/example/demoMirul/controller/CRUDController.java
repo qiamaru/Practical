@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demoMirul.validation.ItemValidation;
+
 @RestController
 @RequestMapping("/demo/v1") // Base path for all endpoints in this controller
 
@@ -63,8 +65,9 @@ public class CRUDController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<String> getItemById(@PathVariable Long id) {
-		String item = dataStore.get(id);
+	public ResponseEntity<String> getItemById(@PathVariable String id) {
+		ItemValidation.parseAndValidateLongId(id);
+		String item = dataStore.get(Long.valueOf(id));
 		if (item != null) {
 			return new ResponseEntity<>("Found item with ID: " + id + " and data: " + item, HttpStatus.OK); // 200 OK if
 																											// found

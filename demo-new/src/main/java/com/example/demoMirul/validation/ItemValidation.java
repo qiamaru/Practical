@@ -25,7 +25,7 @@ public class ItemValidation {
 		try {
 			return Long.valueOf(idString);
 		} catch (NumberFormatException e) {
-			throw new IllegalArgumentException("Invalid ID format. ID must be a valid number.");
+			throw new NumberFormatException("Invalid ID format. ID must be a valid number.");
 		}
 	}
 }

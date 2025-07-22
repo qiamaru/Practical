@@ -54,8 +54,11 @@ public class CRUDControllerRefined{
 
     // --- READ (By ID) ---
     @GetMapping("/{id}")
-    public ResponseEntity<String> getItemById(@PathVariable Long id) {
-        return itemService.getItemById(id)
+    public ResponseEntity<String> getItemById(@PathVariable String id) {
+
+        ItemValidation.parseAndValidateLongId(id);
+
+        return itemService.getItemById(Long.valueOf(id))
                 .map(item -> ResponseEntityUtil.buildResponse("Found item with ID: " + item.id() + " and data: " + item.value(), HttpStatus.OK))
                 .orElseGet(() -> ResponseEntityUtil.buildResponse("Item with ID: " + id + " not found.", HttpStatus.NOT_FOUND));
     }

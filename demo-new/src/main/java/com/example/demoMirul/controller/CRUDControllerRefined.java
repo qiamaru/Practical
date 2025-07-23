@@ -18,7 +18,9 @@ import com.example.demoMirul.service.ItemService;
 import com.example.demoMirul.service.ItemServiceAnalysis;
 import com.example.demoMirul.util.ResponseEntityUtil;
 import com.example.demoMirul.validation.ItemValidation;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/demo/v2")
 public class CRUDControllerRefined{
@@ -26,10 +28,10 @@ public class CRUDControllerRefined{
     private final ItemService itemService;
     private final ItemServiceAnalysis itemServiceAnalysis;
 
-    public CRUDControllerRefined(ItemService itemService, ItemServiceAnalysis itemServiceAnalysis) {
-        this.itemService = itemService;
-		this.itemServiceAnalysis = itemServiceAnalysis;
-    }
+//    public CRUDControllerRefined(ItemService itemService, ItemServiceAnalysis itemServiceAnalysis) {
+//        this.itemService = itemService;
+//		this.itemServiceAnalysis = itemServiceAnalysis;
+//    }
 
     // --- CREATE (Auto-generated ID) ---
     @PostMapping

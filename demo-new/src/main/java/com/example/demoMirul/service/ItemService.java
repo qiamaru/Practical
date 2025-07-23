@@ -2,7 +2,6 @@ package com.example.demoMirul.service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.stereotype.Service;
 
@@ -11,12 +10,12 @@ import com.example.demoMirul.model.*;
 @Service // Mark this as a Spring service component
 public class ItemService {
 
-	private final AtomicLong idCounter = new AtomicLong();
+//	private final AtomicLong idCounter = new AtomicLong();
 
 	public Item createItem(String value) {
 		// Validation is now handled by ItemValidation in the controller,
 		// but we might add more complex business rules here if needed.
-		long newId = idCounter.incrementAndGet();
+		long newId = Data.getIdCounter().incrementAndGet();
 		Data.getDataStore().put(newId, value);
 		return new Item(newId, value);
 	}

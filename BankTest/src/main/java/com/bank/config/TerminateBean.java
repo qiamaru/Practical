@@ -2,15 +2,18 @@ package com.bank.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import lombok.extern.slf4j.Slf4j;
+
 
 import jakarta.annotation.PreDestroy;
 
 @Configuration
+@Slf4j
 public class TerminateBean {
 
     @PreDestroy
     public void onDestroy() {
-        System.out.println("Spring Container is destroyed!");
+        log.info("Spring Container is destroyed!");
     }
     
     @Bean

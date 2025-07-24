@@ -13,8 +13,8 @@ import org.springframework.test.context.ActiveProfiles;
 import com.bank.entity.AccountEntity;
 import com.bank.entity.CustomerEntity;
 
-//@SpringBootTest
-//@ActiveProfiles("test") // Uses application-test.properties for H2 setup
+// @SpringBootTest
+// @ActiveProfiles("test") // Uses application-test.properties for H2 setup
 class CustomerFetchEagerLoadTest {
 
 	//TODO: SpringBoot: Practical Bonus 2 - Eager load vs Lazy Load
@@ -28,7 +28,7 @@ class CustomerFetchEagerLoadTest {
     @Autowired
     private ICustomerRepo customerRepo;
     
-	//@Test
+	// @Test
     void testSaveCustomerWithAccount() {
         // Step 1: Create Customer
         CustomerEntity customer = new CustomerEntity();

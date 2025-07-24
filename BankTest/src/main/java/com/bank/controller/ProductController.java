@@ -30,34 +30,24 @@ public class ProductController {
 
     @PostMapping
     public ResponseEntity<ProductDTO> createProduct(@RequestBody ProductDTO productDto) {
-        // return ResponseEntity.ok(
-        // productMapper.toDto(
-        // productService.createProduct(productMapper.toEntity(productDto))));
         var savedEntity = productService.createProduct(productMapper.toEntity(productDto));
         return ResponseEntity.ok(productMapper.toDto(savedEntity));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<ProductDTO> getProductById(@PathVariable Long id) {
-        // return ResponseEntity.ok(
-        // productMapper.toDto(productService.getProductById(id)));
         ProductEntity productEntity = productService.getProductById(id);
         return ResponseEntity.ok(productMapper.toDto(productEntity));
     }
 
     @GetMapping
     public ResponseEntity<List<ProductDTO>> getAllProducts() {
-        // return ResponseEntity.ok(
-        // productMapper.toDtoList(productService.getAllProducts()));
         var entities = productService.getAllProducts();
         return ResponseEntity.ok(productMapper.toDtoList(entities));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<ProductDTO> updateProduct(@PathVariable Long id, @RequestBody ProductDTO productDto) {
-        // return ResponseEntity.ok(
-        // productMapper.toDto(
-        // productService.updateProduct(id, productMapper.toEntity(productDto))));
         var updatedEntity = productService.updateProduct(id, productMapper.toEntity(productDto));
         return ResponseEntity.ok(productMapper.toDto(updatedEntity));
     }
